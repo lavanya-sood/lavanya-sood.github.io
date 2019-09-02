@@ -1,0 +1,62 @@
+/* Minimum aspect ratio */
+/*@media (min-aspect-ratio: 8/5) {
+  div {
+    background: #9af; 
+  }
+}
+*/
+
+#main {
+	width: 100%;
+	background-color: #333436;
+	color: white;
+	text-align: center;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+#hrmain {
+	color: blue;
+	width: 10px;
+}
+
+#about {
+	width: 100%;
+	text-align: center;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+#projects {
+	width: 100%;
+	background-color: #333436;
+	color: grey;
+	text-align: center;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.col-sm-6 {
+	text-align: center;
+	padding-left: 100px;
+}
+
+.card {
+	width: 80%;
+	min-height: 200px;
+}
+
+footer {
+	background-color: black;
+	width: 100%;
+	color: white;
+}
