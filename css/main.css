@@ -1,193 +1,329 @@
-/* Minimum aspect ratio */
-/*@media (min-aspect-ratio: 8/5) {
-  div {
-    background: #9af; 
-  }
+html, body {
+	overflow-x:hidden;
+	font-family: 'Noto Sans JP', sans-serif;
+	background: linear-gradient(-45deg, #cc1a5b 0%, #cc6b8e 20%, #a86aa4 40%, #8f6aae 60%, #7b5fac 80%, #3f51b1 100%);
+	background-size: 400% 400%;
+	animation: animate 5s ease-in-out infinite;
 }
-*/
 
-#main {
-	width: 100%;
-	background-color: #ffffff;	
-	color: #c7197c;
-	text-align: center;
-	height: 85vh;
+.section {
+	width: 100vw;
+	height: 100vh;
 	display: flex;
-	justify-content: center;
-	align-content: center;
-	flex-direction: column;
-	/* -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
-	-webkit-transition: opacity 2s ease-in;
-	/*animation-duration: 2s;*/
-	animation-iteration-count: infinite; */
-}
-
-.main-icon {
-	margin-left: auto;
-  	margin-right: auto;
-  	display: block;
-	width: 300px;
-	height: 300px;
-}
-
-/* Standard syntax */
-@keyframes example {
-  from {background-image: linear-gradient(#5680E9,#5AB9EA,#84CEEB,#C1C8E4);}
-  to {background-image: linear-gradient(#5AB9EA,#84CEEB,#C1C8E4,#8860D0);}
-}
-
-
-#about {
-	background-color: #c7197c;
-	width: 100%;
-	text-align: center;
-	color: #ffffff;
-	height: 80vh;
-	display: flex;
-	justify-content: center;
-	align-content: center;
+	align-items: center;
+  	justify-content: center;
 	flex-direction: column;
 }
 
-#projects {
-	padding-top: 20px;
-	padding-bottom: 20px;
-	width: 100%;
-	background-color: #ffffff;	
-	color: #c7197c;
-	text-align: center;
-	/*height: 100vh;*/
-	display: flex;
-	justify-content: center;
-	align-content: center;
-	flex-direction: column;
-}
-
-.container projects {
-	width: 50%;
-}
-
-
-.row {
-	padding-bottom: 20px;
-	padding-top: 20px;
-}
-.card {
-	width: 80%;
-	min-height: 200px;
-	border-radius: 15px;
-	/*margin-left: 100px;*/
-}
-
-.card-title {
-	font-weight: 200;
-}
-
-.button-primary {
-	background-color: #c7197c;
-	color: white;
-	border: none;  
-	padding: 10px 15px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	border-radius: 8px;
-
-}
-
-.button-primary:hover {
-	background-color: #630b3d;
-	color: white;
-	border: none;
-	box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24), 0 10px 20px 0 rgba(0,0,0,0.19);
-}
-
-
-footer {
-	padding-top: 10px;
-	text-align: center;
-	background-color: #c7197c;
-	width: 100%;
+#intro-section {
 	color: #ffffff;
-}
-
-#hrline {
-	letter-spacing: 15px;
-	color: #cccccc;
-}
-
-.button-connect {
-	max-width: 40px;
-	max-height: 40px;
-}
-
-.button-connect:hover {
-	box-shadow: 3px 3px #630b3d;
-}
-
-.navbar {
-	background-color: #c7197c;
-}
-
-.nav-link{
-	color: #ffffff;
-}
-
-.nav-link:hover {
-	color: #ccc0c7;
-}
-
-
-.flip-card {
-	background-color: transparent;
-	width: 300px;
-	height: 200px;
-	border: 1px solid #f1f1f1;
-	box-shadow: 3px 3px #eeeeee;
-	perspective: 1000px; /* Remove this if you don't want the 3D effect */
-  }
-  
-  /* This container is needed to position the front and back side */
-  .flip-card-inner {
+	/* background: linear-gradient(-45deg, #cc1a5b 0%, #cc6b8e 20%, #a86aa4 40%, #8f6aae 60%, #7b5fac 80%, #3f51b1 100%);
+	background-size: 400% 400%;
+	animation: animate 5s ease-in-out infinite; */
 	position: relative;
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	transition: transform 0.8s;
-	transform-style: preserve-3d;
-  }
-  
-  /* Do an horizontal flip when you move the mouse over the flip box container */
-  .flip-card:hover .flip-card-inner {
-	transform: rotateY(180deg);
-  }
-  
-  /* Position the front and back side */
-  .flip-card-front, .flip-card-back {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	-webkit-backface-visibility: hidden; /* Safari */
-	backface-visibility: hidden;
-  }
-  
-  /* Style the front side (fallback if image is missing) */
-  .flip-card-front {
-	background-color: #bbb;
-	color: black;
-  }
-  
-  /* Style the back side */
-  .flip-card-back {
-	padding-top: 5px;
-	padding-left: 5px;
-	padding-right: 5px;
-	background-color: #dddddd;
-	color: #5c5e5c;
-	transform: rotateY(180deg);
+}
+
+@keyframes animate{
+	0%{
+	  background-position: 0 50%;
+	}
+	50%{
+	  background-position: 100% 50%;
+	}
+	100%{
+	  background-position: 0 50%;
+	}
   }
 
-  .project-image {
-	  width: 300px;
-	  height: 200px;
+  #nav {
+	  /* position: absolute; */
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  text-align: right;
+	  position: fixed;
+	  z-index: 5;
+	  padding: 15px;
+  }
+
+  #nav a {
+	  margin-left: 15px;
+	  margin-right: 15px;
+  }
+
+  #nav a:hover {
+	text-decoration: underline;
+}
+
+#userimg {
+	width: 30%;
+	border-radius: 30%;
+}
+
+#intro-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	border: 3px solid white;
+}
+
+
+/* BORDER ANIMATION */
+
+.box {
+	box-sizing: border-box;
+	width: 70%;
+	height: 80vh;
+	background-color: #cc1a5b;
+	overflow: hidden;
+	position: relative;
+	box-shadow: 2px 2px 5px 0 #e2a6fa;
+	border-radius: 20px;
+	animation-name: mask-border;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+  }
+  .box::after {
+	content: '';
+	width: 100%;
+	height: 62vh;
+	opacity: 0;
+	background-color: #c28199;
+	transform-origin: center center;
+	position: absolute;
+	z-index: 1;
+	/* animation-delay: 1s; */
+	animation-name: mask-border-ani;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+  }
+  .box-content {
+	width: 97%;
+	height: 95%;
+	vertical-align: top;
+	z-index: 5;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background-color: #fffafc;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	color: #000000;
+	border-radius: 20px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+  }
+
+  #skills-box {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	flex-wrap: wrap;
+  }
+
+  @keyframes mask-border-ani {
+	0% {
+	  opacity: 0.8;
+	  transform: rotate(-36deg) translate(-126px, -190px);
+	  background-color: #c28199;
+	}
+  
+	100% {
+	  opacity: 0.8;
+	  transform: rotate(-36deg) translate(-126px, 355px);
+	  /* background-color: #c6bcd6; */
+	}
+  }
+
+
+.nav-colored { background-color:rgba(81, 40, 92, 0.274); }
+.nav-transparent { background-color:transparent;}
+
+#tablinks {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: row;
+	width: 100%;
+	
+}
+
+#tablinks p {
+	margin: 0;
+}
+
+.tablink {
+	background: none;
+	border: none;
+	font-weight: bolder;
+	color: #bebdbd;
+}
+
+.selectedtab {
+	color: #3f51b1;
+	font-weight: 900;
+}
+
+.lang {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 10px;
+}
+
+.langimg {
+	width: 100px;
+	height: 100px;
+}
+
+#langs {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+#oss {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+#oth {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.skills {
+	width: 80%;
+	margin-top: 20px;
+}
+
+
+#projects-box {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	flex-wrap: wrap;
+  }
+
+  #Pslides {
+	  width: 100%;
+  }
+
+  .projectSlide {
+	  background-color: #ffffff;
+	  box-shadow: 1px 2px 1px 2px #bebebe;
+	  /* width: 358px; */
+	  height: 100%;
+	  display: flex;
+	  justify-content: center;
+	  flex-direction: column;
+	  padding: 10px;
+	  border-radius: 10px;
+  }
+
+  
+  /* SLIDES CONTAINER */
+  
+.slider-container {
+	display: block;
+	margin: 0 auto;
+	min-height: 390px;
+	height: 50%;
+	width: 90%;
+	max-width: 600px;
+	border-radius: 10px;
+	padding: 20px 10px 40px 10px;
+	overflow: hidden;
+  }
+  
+  .slider-container .slide {
+	display: none;
+	height: 100%;
+	width: 100%;
+	margin: 0px auto;
+	background: white;
+	font-size: 40px;
+	font-family: var(--font-1);
+	text-align: center;
+	align-items: center;
+  }
+  
+  .slider-container .slide img {
+	height: auto;
+	width: 100%;
+  }
+  
+  .slider-container .active {
+	display: block;
+  }
+  
+  .control-container {
+	display: inline-flex;
+	width: 100%;
+  }
+  
+  .control-container button {
+	border: none;
+	border-radius: 50%;
+	background: white;
+	font-size: 20px;
+	height: 35px;
+	width: 35px;
+	outline: none;
+  }
+  
+  .control-container button:hover {
+	background: #ccc;
+  }
+  
+  .slide-indicator {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+  }
+  
+  .slide-indicator .indicator {
+	height: 20px;
+	width: 20px;
+	transition: background 0.5s ease;
+	background: #ccc;
+	margin: 5px;
+	display: inline-block;
+	border-radius: 50%;
+  }
+  
+  .slide-indicator .indicator:hover {
+	background: darkgrey;
+  }
+  
+  .slide-indicator .active {
+	background: grey;
+  }
+
+  /* After slides */
+  
+  .project-button {
+	background-color: #7b5fac;
+	box-shadow: 2px 2px #f1dbff; /* Green */
+	color: white;
+  }
+
+  .project-button:hover {
+	background-color: #544175;
+	color: white;
   }
