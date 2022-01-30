@@ -2,6 +2,10 @@ import React from 'react';
 //import './Navigation.css'
 import Navigation from './Navigation.js';
 import Homepage from './Homepage.js';
+import About from './About.js';
+import Projects from './Projects.js';
+
+import {Routes, BrowserRouter, Route } from 'react-router-dom';
 
 import shapes1 from './images/shapes1.png';
 import shapes2 from './images/shapes2.png';
@@ -53,8 +57,20 @@ const Website = (props) => {
           {/* <img src={shapes13} className="shapes shape13" data-value="4" alt=""/>
           <img src={shapes14} className="shapes shape14" data-value="8" alt=""/> */}
         </div>
+        
+        <Navigation/>
+        <div>
+        <BrowserRouter>
+                <Routes>
+                    <Route path="/about" component={About}/>
+                    <Route exact path="/projects" component={Projects}/>
+                    <Route exact path="/" component={Homepage}/>
+                </Routes>
+            </BrowserRouter>
+        </div>
+        
+
         {/* <Homepage/> */}
-        {/* <Navigation/> */}
     </div>
   );
 };

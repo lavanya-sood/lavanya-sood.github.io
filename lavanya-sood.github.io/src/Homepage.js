@@ -4,10 +4,12 @@ import React from 'react';
 const Homepage = (props) => {
 
   return (
-    <div id="homepage">
-        {/* <div id="logo"></div> */}
-        <h1> Home </h1>
-        {/* <h2> Lavanya Sood </h2> */}
+    <div className="page-body" id="homepage">
+        <div id="home-title">
+          <h1> LAVANYA SOOD </h1>
+        </div>
+        <h2> Software Developer who is passionate about technology and creativity. </h2>
+
     </div>
   );
 };
