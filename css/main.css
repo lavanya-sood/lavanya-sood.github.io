@@ -17,9 +17,6 @@ html, body {
 
 #intro-section {
 	color: #ffffff;
-	/* background: linear-gradient(-45deg, #cc1a5b 0%, #cc6b8e 20%, #a86aa4 40%, #8f6aae 60%, #7b5fac 80%, #3f51b1 100%);
-	background-size: 400% 400%;
-	animation: animate 5s ease-in-out infinite; */
 	position: relative;
 }
 
@@ -35,23 +32,22 @@ html, body {
 	}
   }
 
-  #nav {
-	  /* position: absolute; */
-	  top: 0;
-	  left: 0;
-	  width: 100%;
-	  text-align: right;
-	  position: fixed;
-	  z-index: 5;
-	  padding: 15px;
-  }
+#nav {
+	top: 0;
+	left: 0;
+	width: 100%;
+	text-align: right;
+	position: fixed;
+	z-index: 5;
+	padding: 15px;
+}
 
-  #nav a {
-	  margin-left: 15px;
-	  margin-right: 15px;
-  }
+#nav a {
+	margin-left: 15px;
+	margin-right: 15px;
+}
 
-  #nav a:hover {
+#nav a:hover {
 	text-decoration: underline;
 }
 

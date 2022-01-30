@@ -1,0 +1,19 @@
+#nav {
+	top: 0;
+	left: 0;
+	width: 100%;
+	text-align: right;
+	position: fixed;
+	z-index: 5;
+	padding: 15px;
+}
+
+#nav a {
+	margin-left: 15px;
+	margin-right: 25px;
+	font-weight: bolder;
+}
+
+#nav a:hover {
+	text-decoration: underline;
+}
