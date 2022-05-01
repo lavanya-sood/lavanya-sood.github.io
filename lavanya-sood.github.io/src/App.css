@@ -17,6 +17,7 @@ body {
 
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
   
 }
 
@@ -152,7 +153,7 @@ body {
 }
 
 
-h1 {
+#home-title h1 {
   font-family: 'Teko', sans-serif;
 }
 
@@ -233,4 +234,112 @@ h1 {
   text-align: center;
   font-family: 'Homemade Apple', cursive;
   font-size: 1em;
+}
+
+/* #projects */
+
+.projectCard {
+  width: 30vw;
+  height: 40vh;
+  padding-top: 80px;
+  padding-left: 25px;
+  padding-right:25px;
+  text-align: center;
+  background: #52C0F5;
+  /* color: #FFF; */
+  color: rgb(56, 56, 56);
+  font-size: 12px;
+  border-radius: 10px;
+  overflow: scroll;
+}
+
+.project1 {
+  background-color: #f7c4d4;
+}
+
+.project2 {
+  background-color: #b8c4f1;
+}
+
+.project3 {
+  background-color: #cde5cd;
+}
+
+.project4 {
+  background-color: #f2d4ac;
+}
+
+#cards-carousel {
+  width: 80%;
+  height: 70%;
+}
+
+.project-heading {
+  font-size: 2.3em;
+  font-weight: bold;
+  
+}
+
+.project-info {
+  font-size: 1.5em;
+}
+
+.project-button {
+  border: none;
+  background-image: linear-gradient(#2d2c41,#141414);
+  color: white;
+  font-size: 1.3em;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 2px 5px #3d3d3d1e;
+  /* filter: drop-shadow(0 0 5px #1f1c3a); */
+}
+
+.project-button:hover {
+  background-image: linear-gradient(#eeeeee,#adadad);
+  color: #141414;
+}
+
+.page-headings {
+	color: white;
+  font-family: 'Teko', sans-serif;
+  font-size: 4em;
+  letter-spacing: 0.1em;
+  margin: 30px;
+}
+
+/* ABOUT PAGE  */
+#aboutInner {
+  flex: 1;
+  width: 60vw;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  overflow-y:auto
+}
+
+#languageSkills {
+  width: 80%;
+}
+
+#otherSkills {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.skillSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+.skillImg {
+  width: 100px;
 }

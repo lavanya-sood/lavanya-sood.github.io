@@ -6,9 +6,10 @@
 	position: fixed;
 	z-index: 5;
 	padding: 15px;
+	
 }
 
-#nav a {
+/* #nav a {
 	margin-left: 15px;
 	margin-right: 25px;
 	font-weight: bolder;
@@ -16,4 +17,33 @@
 
 #nav a:hover {
 	text-decoration: underline;
+} */
+
+.navlinks {
+	color: white;
+	text-decoration: none;
+	margin-left: 10px;
+	margin-right: 30px;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+#home-link:hover {
+	border-bottom: 3px solid #f7c4d4;
+}
+
+#about-link:hover {
+	border-bottom: 3px solid #b8c4f1;
+}
+
+#projects-link:hover {
+	border-bottom: 3px solid #cde5cd;
+}
+
+#resume-link:hover {
+	border-bottom: 3px solid #f2d4ac;
+}
+
+.page-headings {
+	color: white;
 }

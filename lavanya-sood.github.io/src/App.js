@@ -52,13 +52,14 @@ function App() {
           <img src={shapes14} className="shapes shape14" data-value="8" alt=""/> */}
         </div>
         
-        <Navigation/>
+        
         <BrowserRouter>
           <Routes>
               <Route path="/about" element={<About/>}/>
               <Route exact path="/projects" element={<Projects/>}/>
               <Route exact path="/" element={<Homepage/>}/>
           </Routes>
+          <Navigation/>
         </BrowserRouter>
     </div>
   );
