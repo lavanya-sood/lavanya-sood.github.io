@@ -1,0 +1,45 @@
+#nav {
+	top: 0;
+	left: 0;
+	width: 100%;
+	text-align: right;
+	position: fixed;
+	z-index: 5;
+	padding: 15px;
+	
+	
+}
+
+#navitems {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.navlinks {
+	color: white;
+	text-decoration: none;
+	margin-left: 10px;
+	margin-right: 30px;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+#home-link:hover {
+	border-bottom: 3px solid #f7c4d4;
+}
+
+#about-link:hover {
+	border-bottom: 3px solid #b8c4f1;
+}
+
+#projects-link:hover {
+	border-bottom: 3px solid #cde5cd;
+}
+
+#resume-link:hover {
+	border-bottom: 3px solid #f2d4ac;
+}
+
+.page-headings {
+	color: white;
+}

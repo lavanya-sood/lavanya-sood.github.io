@@ -1,0 +1,204 @@
+import React from 'react';
+//import './Navigation.css'
+// import SkillBar from 'react-skillbars';
+import { SkillBars } from 'react-skills';
+
+
+
+
+const About = (props) => {
+
+  // const SKILLS = [
+  //   {
+  //     "type": "HTML",
+  //     "level": "80",
+  //     "color": {
+  //       "bar": "#3498db",
+  //       "title": {
+  //         "background": "#2980b9",
+  //         "text": "black"
+  //       }
+  //     }
+  //   },
+  //   {
+  //     "type": "CSS",
+  //     "level": "70",
+  //     "color": {
+  //       "bar": "#3498db",
+  //       "title": {
+  //         "background": "#2980b9",
+  //         "text": "black"
+  //       }
+  //     }
+  //   },
+  //   {
+  //     "type": "React",
+  //     "level": "90",
+  //     "color": {
+  //       "bar": "#3498db",
+  //       "title": {
+  //         "background": "#2980b9",
+  //         "text": "black"
+  //       }
+  //     }
+  //   },
+  //   {
+  //     "type": "JavaScript",
+  //     "level": "90",
+  //     "color": {
+  //       "bar": "#3498db",
+  //       "title": {
+  //         "background": "#2980b9",
+  //         "text": "black"
+  //       }
+  //     }
+  //   },
+  //   {
+  //     "type": "React Native",
+  //     "level": "90",
+  //     "color": {
+  //       "bar": "#3498db",
+  //       "title": {
+  //         "background": "#2980b9",
+  //         "text": "black"
+  //       }
+  //     }
+  //   },
+  //   {
+  //     "type": "NodeJS",
+  //     "level": "90",
+  //     "color": {
+  //       "bar": "#3498db",
+  //       "title": {
+  //         "background": "#2980b9",
+  //         "text": "black"
+  //       }
+  //     }
+  //   },
+  //   {
+  //     "type": "Python",
+  //     "level": "90",
+  //     "color": {
+  //       "bar": "#3498db",
+  //       "title": {
+  //         "background": "#2980b9",
+  //         "text": "black"
+  //       }
+  //     }
+  //   },
+  //   {
+  //     "type": "SQL",
+  //     "level": "90",
+  //     "color": {
+  //       "bar": "#3498db",
+  //       "title": {
+  //         "background": "#2980b9",
+  //         "text": "black"
+  //       }
+  //     }
+  //   },
+
+  //   {
+  //     "type": "MongoDB",
+  //     "level": "90",
+  //     "color": {
+  //       "bar": "#3498db",
+  //       "title": {
+  //         "background": "#2980b9",
+  //         "text": "black"
+  //       }
+  //     }
+  //   },
+  //   {
+  //     "type": "Java",
+  //     "level": "90",
+  //     "color": {
+  //       "bar": "#3498db",
+  //       "title": {
+  //         "background": "#2980b9",
+  //         "text": "black"
+  //       }
+  //     }
+  //   },
+  //   {
+  //     "type": "C++",
+  //     "level": "90",
+  //     "color": {
+  //       "bar": "#3498db",
+  //       "title": {
+  //         "background": "#2980b9",
+  //         "text": "black"
+  //       }
+  //     }
+  //   }
+  // ];
+
+
+  const skillsData= [
+    {
+      name: 'HTML',
+      level: 90,
+      color: '#f7c4d4',
+    },
+    {
+      name: 'CSS',
+      level: 70,
+      color: '#b8c4f1',
+    },
+    {
+      name: 'ReactJS',
+      level: 70,
+      color: '#cde5cd',
+    },
+    {
+      name: 'JavaScript',
+      level: 80,
+      color: '#f2d4ac',
+    },
+    {
+      name: 'React Native',
+      level: 50,
+      color: '#f7c4d4',
+    },
+    {
+      name: 'Python',
+      level: 80,
+      color: '#b8c4f1',
+    },
+    {
+      name: 'SQL',
+      level: 70,
+      color: '#cde5cd',
+    },
+    {
+      name: 'Java',
+      level: 50,
+      color: '#f2d4ac',
+    }
+  ]
+
+  return (
+    <div className="page-body" id="aboutpage">
+        <h1 className='page-headings'> About Me </h1>
+        <div id="aboutInner">
+          <p>
+          I have a lot of previous experience working in developing webpages and mobile applications. 
+          </p>
+          <h2 className='page-subheadings'> My Technical Skills </h2>
+          <div id="languageSkills">
+            {/* <SkillBar skills={SKILLS}/> */}
+            <SkillBars skills={skillsData} flat={true} barsHeight={40}/>
+          </div>
+
+          <h2 className='page-subheadings'> My Technical Skills </h2>
+          
+          
+
+        </div>
+       
+    </div>
+    
+  );
+};
+
+export default About;

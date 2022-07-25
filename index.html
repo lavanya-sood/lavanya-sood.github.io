@@ -1,226 +1,260 @@
-<!doctype html>
-<!-- DOCUMENT COLOR: #c7197c-->
-<!--html itemscope="" itemtype="http://schema.org/SearchResultsPage" lang="en-AU"-->
+<!DOCTYPE html>
 <html>
-<head>
-<!--meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image"-->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <head>
+    <title>App</title>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/main.css">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="js/main.js" defer></script>
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
 
-<link rel="stylesheet" href="css/main.css">
+		<script src="https://cdn.jsdelivr.net/npm/vue-carousel@0.18.0/dist/vue-carousel.min.js"></script>
+		
+  </head>
+  <body>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-
-<body>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="js/main.js" defer></script>
-</head>
-<body>
-
-
-
-<nav class="navbar navbar-expand-lg">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#about">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#projects">Projects</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Connect with me
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="https://www.linkedin.com/in/lavanya-s-3057b416a/">LinkedIn</a>
-          <a class="dropdown-item" href="https://github.com/lavanya-sood">Github</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-<div id="main">
-	<input type="image" src="img/icon.png" class="main-icon" onclick="window.location.href = 'https://www.linkedin.com/in/lavanya-s-3057b416a/';" />
-	<h1> Lavanya Sood </h1>
-	<!-- <hr id="hrmain"> </hr> -->
-	<h1 id = "hrline">•   •   •   •   •   •   •</h1>
-	<h4 id="main-heading"> {{ message }} </h4>
-</div>
-
-
-
-<br> </br>
-<br> </br>
-<div id="about">
-	<h3> Hello my name is Lavanya Sood.</h3>
-	<h3> I am a penultimate year Software Engineering Student at University of New South Wales</h3>
-	<h3> and I am very passionate about creating software which can benefit and inspire people</h3>
-</div>
-
-<div id="projects">
-	<h1> My Software Projects </h1>
-	<div class="container projects">
-		<div class="row">
-		  <div class="col-sm">
-			<div class="flip-card">
-				<div class="flip-card-inner">
-				  <div class="flip-card-front">
-					<img src="img/Title Cards/Title Cards 3.jpg" class="project-image">
-				  </div>
-				  <div class="flip-card-back">
-					<h3>GlobeShoppers</h3> 
-					<p>A online trading platform that allows it's users to purchase items from overseas and avoid shipping costs</p> 
-					<button onclick="window.location.href = 'https://github.com/lavanya-sood/GlobeShoppers-SENG2021';" class="button-primary"> See Project Files </button>
-		      
-				  </div>
-				</div>
-			  </div>
-		  </div>
-		  <div class="col-sm">
-			<div class="flip-card">
-				<div class="flip-card-inner">
-				  <div class="flip-card-front">
-					<img src="img/Title Cards/Title Cards 10.jpg" class="project-image">
-				  </div>
-				  <div class="flip-card-back">
-					<h3>The Adventures of Captain Epidemic</h3> 
-					<p>A website for young children to learn about pandemics</p> 
-					<button onclick="window.location.href = 'https://captain-epidemic.herokuapp.com/#/';" class="button-primary"> See Website </button>
-				  </div>
-				</div>
-			  </div>
-		  </div>
-		  <div class="col-sm">
-			<div class="flip-card">
-				<div class="flip-card-inner">
-				  <div class="flip-card-front">
-					<img src="img/Title Cards/Title Cards 7.jpg" class="project-image">
-				  </div>
-				  <div class="flip-card-back">
-					<h3>Rags to Riches</h3> 
-					<p>The game of monopoly where two users can buy, sell and rent properties to have fun and win the game</p> 
-					<button onclick="window.location.href = 'https://github.com/lavanya-sood/Monopoly-Game';" class="button-primary"> See Project Files </button>
-				  </div>
-				</div>
-			  </div>
-		  </div>
+	<div id="intro-section" class="section"> 
+		
+		<div id="nav">
+			<a> About </a>
+			<a> Projects </a>
+			<a> Contact </a>
 		</div>
-		<div class="row">
-			<div class="col-sm">
-				<div class="flip-card">
-					<div class="flip-card-inner">
-					  <div class="flip-card-front">
-						<img src="img/Title Cards/Title Cards 4.jpg" class="project-image">
-					  </div>
-					  <div class="flip-card-back">
-						<h3>The Hangman Game</h3> 
-						<p>A Hangman game where the user guesses Pixar and Dreamworks characters</p> 
-						<button onclick="window.location.href = 'https://github.com/lavanya-sood/Hangman-Game';" class="button-primary"> See Project Files </button>
-					  </div>
-					</div>
-				  </div>
-			</div>
-			<div class="col-sm">
-				<div class="flip-card">
-				<div class="flip-card-inner">
-				  <div class="flip-card-front">
-					<img src="img/Title Cards/Title Cards 2.jpg" class="project-image">
-				  </div>
-				  <div class="flip-card-back">
-					<h3>The Adventures of Billy the Butcher</h3> 
-					<p>A maze games that lets users play multiple levels in order to win the game</p> 
-					<button onclick="window.location.href = 'https://github.com/lavanya-sood/Dungeon-Game-COMP2511';" class="button-primary"> See Project Files </button>
-				  </div>
+		<div class="box" data-aos="zoom-in">
+			<div class="box-content"> 
+				<img id="userimg" src="./img/Usericon.png"/>
+				<div>
+					<h1> Hi, I'm Lavanya Sood. </h1>
+					<h3> I'm a Software Engineering Student. </h3>
 				</div>
-			  </div>
 			</div>
-			<div class="col-sm">
-				<div class="flip-card">
-					<div class="flip-card-inner">
-					  <div class="flip-card-front">
-						<img src="img/Title Cards/Title Cards 1.jpg" class="project-image">
-					  </div>
-					  <div class="flip-card-back">
-						<h3>GlobeShoppers</h3> 
-						<p class="card-text">A high level prototype of an application to keep track of local animals in your surroundings</p>
-						<button onclick="window.location.href = 'https://github.com/lavanya-sood/Animal-Adventures';" class="button-primary"> See Project Files </button>
-		     
-					  </div>
+		</div>
+	</div>
+	<div class="section"> 
+		<div class="box" data-aos="zoom-in">
+			<div class="box-content"> </div>
+		</div>
+	</div>
+	<div class="section"> 
+		<div class="box" data-aos="zoom-in">
+			<div class="box-content" id="skills-box" > 
+				<h2> Technical Skills </h2>
+				<div id="tablinks">
+					<button class="tablink selectedtab" onclick="openSkills(event,'languages')"> PROGRAMMING LANGUAGES </button>
+					<p> | </p>
+					<button class="tablink" onclick="openSkills(event,'os')"> OPERATING SYSTEMS </button>
+					<p> | </p>
+					<button class="tablink" onclick="openSkills(event,'otherskills')"> OTHER </button>
+				</div>
+				
+				<!-- <div id="sections"> -->
+					<div id="languages" class="skills">
+						<div id="langs">
+
+						
+							<div class="lang">
+								<img class="langimg" src="./img/Logos/JavaScript.png"/>
+								<p> JavaScript </p>
+							</div>
+							<div class="lang">
+								<img class="langimg" src="./img/Logos/Python.png">
+								<p> Python </p>
+							</div>
+							<div class="lang">
+								<img class="langimg" src="./img/Logos/Java.png"/>
+								<p> Java </p>
+							</div>
+							<div class="lang">
+								<img class="langimg" src="./img/Logos/Cplus.png"/>
+								<p> C++ </p>
+							</div>
+							<!-- <div class="lang">
+								<img class="langimg" src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"/>
+								<p> JavaScript </p>
+							</div>
+							<div class="lang">
+								<img class="langimg" src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"/>
+								<p> JavaScript </p>
+							</div> -->
+						</div>
+
 					</div>
-				  </div>
+
+					<div id="os" class="skills" style="display:none">
+						<div id="oss">
+							<div class="lang">
+								<img class="langimg" src="./img/Logos/Apple.png"/>
+								<p> MacOSx </p>
+							</div>
+							<div class="lang">
+								<img class="langimg" src="./img/Logos/Windows.png"/>
+								<p> Windows 10 </p>
+							</div>
+							<div class="lang">
+								<img class="langimg" src="./img/Logos/Linux.png"/>
+								<p> Linux </p>
+							</div>
+						</div>
+					</div>
+
+					<div id="otherskills" class="skills" style="display:none">
+						<div id="oth">
+							<div class="lang">
+								<img class="langimg" src="./img/Logos/Figma.svg"/>
+								<p> Figma </p>
+							</div>
+							<div class="lang">
+								<img class="langimg" src="./img/Logos/Balsamiq.png"/>
+								<p> Balsamiq </p>
+							</div>
+							<div class="lang">
+								<img class="langimg" src="./img/Logos/Photoshop.png"/>
+								<p> Photoshop </p>
+							</div>
+							<div class="lang">
+								<img class="langimg" src="./img/Logos/Aftereffects.png"/>
+								<p> After Effects </p>
+							</div>
+						</div>
+					</div>
+				<!-- </div> -->
 			</div>
-		  </div>
-		  <div class="row">
-			<div class="col-sm">
-				<div class="flip-card">
-					<div class="flip-card-inner">
-					  <div class="flip-card-front">
-						<img src="img/Title Cards/Title Cards 6.jpg" class="project-image">
-					  </div>
-					  <div class="flip-card-back">
-						<h3>Vampire System</h3> 
-						<p class="card-text">A database system developed for the organization Vampire PVT. LTD. in order to manage their blood supplies.</p>
-						<button onclick="window.location.href = 'https://github.com/lavanya-sood/Vampire-System-SENG2011';" class="button-primary"> See Project Files </button>
-					  
-					  </div>
+		</div>
+	</div>
+
+	<div class="section"> 
+		<div class="box" data-aos="zoom-in">
+			<div class="box-content" id="projects-box"> 
+				<h2> Projects </h2>
+				<div id="slides">
+					<div class="slider-container">
+					<div class="slide active">
+						<div class="projectSlide">
+							<h3> Globeshoppers </h3>
+							<h4> A online trading platform that allows users to buy items from overseas and avoid shipping costs</h4>
+							<div class="buttons-group">
+								<button class="btn project-button btn-website"> View Website </button>
+								<button class="btn project-button btn-code"> View Code </button>
+							</div>
+						</div>
 					</div>
-				  </div>
+					<div class="slide">
+						<div class="projectSlide">
+							<h3> Adventures of Captain Epidemic </h3>
+							<h4> A website for young children to learn about pandemics</h4>
+							<div class="buttons-group">
+								<button class="btn project-button btn-website"> View Website </button>
+								<button class="btn project-button btn-code"> View Code </button>
+							</div>
+						</div>
+					</div>
+					<div class="slide">
+						<div class="projectSlide">
+							<h3> Rags to Riches </h3>
+							<h4> The game of monopoly where two users can buy, sell and rent properties to have fun and win the game</h4>
+							<div class="buttons-group">
+								<button class="btn project-button btn-website"> View Website </button>
+								<button class="btn project-button btn-code"> View Code </button>
+							</div>
+						</div>
+					</div>
+					<div class="slide">
+						<div class="projectSlide">
+							<h3> Animal Adventures </h3>
+							<h4> A high level prototype of an application to keep track of local animals in your surroundings</h4>
+							<div class="buttons-group">
+								<button class="btn project-button btn-website"> View Website </button>
+								<button class="btn project-button btn-code"> View Code </button>
+							</div>
+						</div>
+					</div>
+					<div class="slide">
+						<div class="projectSlide">
+							<h3> Vampire System </h3>
+							<h4> A database system developed for the organization Vampire PVT. LTD. in order to manage their blood supplies. </h4>
+							<div class="buttons-group">
+								<button class="btn project-button btn-website"> View Website </button>
+								<button class="btn project-button btn-code"> View Code </button>
+							</div>
+						</div>
+					</div>
+					<div class="slide">
+						<div class="projectSlide">
+							<h3> Hangman Game </h3>
+							<h4> A Hangman game where the user guesses Pixar and Dreamworks characters </h4>
+							<div class="buttons-group">
+								<button class="btn project-button btn-website"> View Website </button>
+								<button class="btn project-button btn-code"> View Code </button>
+							</div>
+						</div>
+					</div>
+					<div class="slide">
+						<div class="projectSlide">
+							<h3> Funsize Physics </h3>
+							<h4> A simulation which shows the effects of gravity on an object </h4>
+							<div class="buttons-group">
+								<button class="btn project-button btn-website"> View Website </button>
+								<button class="btn project-button btn-code"> View Code </button>
+							</div>
+						</div>
+					</div>
+					<div class="slide">
+						<div class="projectSlide">
+							<h3> Booking System </h3>
+							<h4> Allows users to book appointments with their doctors and the doctors to keep track of them </h4>
+							<div class="buttons-group">
+								<button class="btn project-button btn-website"> View Website </button>
+								<button class="btn project-button btn-code"> View Code </button>
+							</div>
+						</div>
+					</div>
+					<div class="control-container">
+						<button class="prev">
+						<i class="fa fa-chevron-left"></i>
+						</button>
+						<div class="slide-indicator">
+							<span class="indicator active"></span>
+							<span class="indicator"></span>
+							<span class="indicator"></span>
+							<span class="indicator"></span>
+							<span class="indicator"></span>
+							<span class="indicator"></span>
+							<span class="indicator"></span>
+							<span class="indicator"></span>
+						</div>
+						<button class="next">
+						<i class="fa fa-chevron-right"></i>
+						</button>
+					</div>
+					</div>
+									</div>
+
 			</div>
-			<div class="col-sm">
-				<div class="flip-card">
-					<div class="flip-card-inner">
-					  <div class="flip-card-front">
-						<img src="img/Title Cards/Title Cards 8.jpg" class="project-image">
-					  </div>
-					  <div class="flip-card-back">
-						<h3>Funsize Physics</h3> 
-						<p class="card-text"> A simulation which shows the effects of gravity on an object</p>
-		       			<button onclick="window.location.href = 'https://github.com/lavanya-sood/Physics-Simulation';" class="button-primary"> See Project Files </button>
-		      
-					</div>
-					</div>
-				  </div>
+		</div>
+	</div>
+
+	<div class="section"> 
+		<div class="box" data-aos="zoom-in">
+			<div class="box-content" id="skills-box"> 
+
+
 			</div>
-			<div class="col-sm">
-				<div class="flip-card">
-					<div class="flip-card-inner">
-					  <div class="flip-card-front">
-						<img src="img/Title Cards/Title Cards 9.jpg" class="project-image">
-					  </div>
-					  <div class="flip-card-back">
-						<h3>Booking System </h3> 
-						<p class="card-text">Allows users to book appointments with their doctors and the doctors to keep track of them</p>
-						<!-- <a href="https://github.com/lavanya-sood/HealthCare-Booking-System" class="btn btn-primary">See Project Files</a> -->
-						<button onclick="window.location.href = 'https://github.com/lavanya-sood/HealthCare-Booking-System';" class="button-primary"> See Project Files </button>
-					  
-					  </div>
-					</div>
-				  </div>
-			</div>
-		  </div>
-	  </div>
-</div>
-
-
-
-
-
-<footer>
-<h4> Connect with me: </h4>
-<!-- <h5> Hey </h5> -->
-<input type="image" src="img/github.png" class="button-connect" onclick="window.location.href = 'https://www.linkedin.com/in/lavanya-s-3057b416a/';" />
-
-<input type="image" src="img/linkedin.png" class="button-connect" onclick="window.location.href = 'https://github.com/lavanya-sood';"/>
-<br></br>
-</footer>
-
-</body>
+		</div>
+	</div>
+	<script>
+		AOS.init();
+	  </script>
+  </body>
 </html>
