@@ -20,7 +20,7 @@ const Projects = (props) => {
             <div className="projectCard project2">
               <h2 className='project-heading'> Bakechain </h2>
               <h3 className='project-info'> A blockchain web platform for people to view and edit information about baked goods </h3>
-              <button className='project-button' onClick={(e) => {e.preventDefault(); window.location.href='https://thesismodule-frontendnew.netlify.app/';}}> View Code </button>
+              <button className='project-button' onClick={(e) => {e.preventDefault(); window.location.href='https://github.com/lavanya-sood/BakeChain';}}> View Code </button>
             </div>
             <div className="projectCard project3">
               <h2 className='project-heading'> Captain Epidemic </h2>
@@ -31,7 +31,7 @@ const Projects = (props) => {
             <div className="projectCard project4">
               <h2 className='project-heading'> Ask Away </h2>
               <h3 className='project-info'> A Mobile Application for people to chat with their friends </h3>
-              <button className='project-button' onClick={(e) => {e.preventDefault(); window.location.href='https://thesismodule-frontendnew.netlify.app/';}}> View Code </button>
+              <button className='project-button' onClick={(e) => {e.preventDefault(); window.location.href='https://github.com/lavanya-sood/AskAway';}}> View Code </button>
             </div>
             
             <div className="projectCard project1">
