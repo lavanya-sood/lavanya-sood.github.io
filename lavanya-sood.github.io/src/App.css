@@ -150,6 +150,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color: white;
 }
 
 
@@ -342,4 +343,14 @@ body {
 }
 .skillImg {
   width: 100px;
+}
+
+#contacts {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contact-image {
+  width: 150px;
+  margin: 20px;
 }
