@@ -9,7 +9,7 @@ const Navigation = (props) => {
         <Link to='/' className="navlinks" id="home-link"> Home </Link>
         <Link to='/about' className="navlinks" id="about-link"> About </Link>
         <Link to='/projects' className="navlinks" id="projects-link"> Projects </Link>
-        <Link to='/' className="navlinks" id="resume-link"> Resume </Link>
+        <Link to='/contact' className="navlinks" id="resume-link"> Contact </Link>
     </div>
   );
 };

@@ -18,6 +18,7 @@ import shapes9 from './images/shapes9.png';
 import shapes10 from './images/shapes10.png';
 import shapes11 from './images/shapes11.png';
 import shapes12 from './images/shapes12.png';
+import Contact from './Contact';
 
 function App() {
 
@@ -57,6 +58,7 @@ function App() {
           <Routes>
               <Route path="/about" element={<About/>}/>
               <Route exact path="/projects" element={<Projects/>}/>
+              <Route exact path="/contact" element={<Contact/>}/>
               <Route exact path="/" element={<Homepage/>}/>
           </Routes>
           <Navigation/>

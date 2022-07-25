@@ -1,6 +1,8 @@
 import React from 'react';
 //import './Navigation.css'
+// import ReactSkillbar from 'react-skillbars';
 import ReactSkillbar from 'react-skillbars';
+
 import githubLogo from './images/github.png';
 import photoshopLogo from './images/adobe-photoshop-logo-freelogovectors.net_.png';
 import effectsLogo from './images/adobe-after-effects-logo.png';
