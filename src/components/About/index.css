@@ -1,0 +1,52 @@
+.section1 {
+  /* position: absolute; */
+  margin-top: -15vh;
+  height: 95vh;
+  width: 95vw;
+  background-color: #000;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 20vh, 100% 0vh, 100% 75vh, 0 100%);
+  /* padding: 10px; */
+}
+
+.section1-inner {
+  height: 93vh;
+  width: 94vw;
+  position: absolute;
+  top: 1vh;
+  left: 0.5vw;
+  background-image: linear-gradient(to right bottom, #de462cc4, #d66363c4),
+    url("../../img/texturebg1.jpg");
+  background-position: top;
+  background-size: contain;
+  position: relative;
+  clip-path: polygon(0 20vh, 100% 0vh, 100% 73vh, 0 100%);
+}
+
+.section1-title {
+  position: relative;
+  top: 12vh;
+  left: 40vw;
+  display: block;
+}
+
+.section1-title-top {
+  top: 5px;
+  left: 5px;
+  position: absolute;
+  font-family: "Avengence";
+  font-size: 2em;
+
+  letter-spacing: 0.1em;
+}
+
+.section1-title-back {
+  position: absolute;
+  font-family: "Avengence";
+  font-size: 2em;
+  letter-spacing: 0.1em;
+  color: #fff;
+  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-color: black;
+}
