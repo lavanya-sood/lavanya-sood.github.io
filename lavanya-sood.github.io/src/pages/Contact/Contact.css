@@ -1,0 +1,131 @@
+/* Chatbot.css (or in a styled-components file) */
+.chat-container {
+  width: 400px;
+  margin: 0 auto;
+  border: 1px solid #d4a017;
+  border-radius: 20px;
+  background-color: #be797e;
+  overflow-y: scroll;
+  height: 500px;
+}
+
+.messages-section {
+  padding: 20px;
+}
+
+.message-container {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  width: 100%;
+  clear: both;
+}
+
+.message-container.user {
+  justify-content: flex-end;
+}
+
+.bot-icon-container {
+  width: 30px; /* Adjust size as needed */
+  height: 30px;
+  border-radius: 50%; /* Make it a circle */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px; /* Spacing between icon and message */
+  flex-shrink: 0; /* Prevent icon container from shrinking */
+}
+
+.bot-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.bot-icon-hidden {
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+}
+
+.message {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #aa1a1a;
+  text-align: left;
+}
+
+/* .message.user {
+  background-color: #e0f2f7; 
+} */
+
+/* Ensure proper floating for older browsers or if needed */
+.message-container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* .message {
+  position: relative;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  clear: both;
+} */
+
+.user {
+  /* background-color: #e0f2f7; */
+  float: right;
+}
+
+.bot {
+  float: left;
+}
+
+.options {
+  margin-top: 10px;
+  text-align: left;
+  padding-left: 40px;
+}
+
+.option-button {
+  padding: 8px 16px;
+  margin-bottom: 10px;
+  border: 2px solid #aa1a1a;
+  border-radius: 10px;
+  background: none;
+  color: white;
+  cursor: pointer;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 10px;
+  background-color: #d4a017;
+  position: sticky;
+  top: 0;
+}
+
+.chat-header-logo {
+  height: 50px;
+  margin-right: 10px;
+}
+.chat-header-name {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.chat-header-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.chat-header-button {
+  background: none;
+}

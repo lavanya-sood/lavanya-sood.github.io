@@ -1,0 +1,118 @@
+import React, { useState, useEffect } from "react";
+import "./Navbar.css";
+
+const Navbar = () => {
+  const sections = ["Home", "About", "Projects", "Contact"];
+  const [activeTab, setActiveTab] = useState("Home");
+
+  // Function to handle scrolling and update active tab
+  useEffect(() => {
+    const handleScroll = () => {
+      sections.forEach((section) => {
+        const element = document.getElementById(section.toLowerCase());
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
+            setActiveTab(section);
+          }
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <nav className="navbar">
+      <div className="navbar-container">
+        <div className="logo">MyPortfolio</div>
+        <ul className="nav-links">
+          {sections.map((section) => (
+            <li key={section} className="nav-item">
+              <button
+                onClick={() => {
+                  document
+                    .getElementById(section.toLowerCase())
+                    .scrollIntoView({ behavior: "smooth" });
+                  setActiveTab(section);
+                }}
+                className={`nav-link ${activeTab === section ? "active" : ""}`}
+              >
+                {section}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
+
+
+// import React from 'react';
+// import './Navbar.css';
+
+// const Navbar = () => {
+//   const sections = ['Home', 'About', 'Projects', 'Contact'];
+
+//   const scrollToSection = (id) => {
+//     document.getElementById(id).scrollIntoView({
+//       behavior: 'smooth',
+//       inline: 'start',
+//     });
+//   };
+
+//   return (
+//     <nav className="navbar">
+//       <div className="navbar-container">
+//         <div className="logo">MyPortfolio</div>
+//         <ul className="nav-links">
+//           {sections.map((section) => (
+//             <li key={section} className="nav-item">
+//               <button
+//                 onClick={() => scrollToSection(section.toLowerCase())}
+//                 className="nav-link"
+//               >
+//                 {section}
+//               </button>
+//             </li>
+//           ))}
+//         </ul>
+//       </div>
+//     </nav>
+//   );
+// };
+
+// export default Navbar;
+
+// import React from 'react';
+// import './Navbar.css'
+// const Navbar = () => {
+//   const sections = ['Home', 'About', 'Projects', 'Contact'];
+
+//   const scrollToSection = (id) => {
+//     document.getElementById(id).scrollIntoView({
+//       behavior: 'smooth',
+//       inline: 'start',
+//     });
+//   };
+
+//   return (
+//     <nav>
+//       <ul>
+//         {sections.map((section) => (
+//           <li key={section}>
+//             <button onClick={() => scrollToSection(section.toLowerCase())}>
+//               {section}
+//             </button>
+//           </li>
+//         ))}
+//       </ul>
+//     </nav>
+//   );
+// };
+
+// export default Navbar;

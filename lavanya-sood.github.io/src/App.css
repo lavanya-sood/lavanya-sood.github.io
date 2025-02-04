@@ -1,0 +1,211 @@
+@font-face {
+  font-family: "Futura";
+  src: url("../src/assets/futura/futur.ttf");
+}
+
+@font-face {
+  font-family: "Celestia";
+  src: url("../src/assets/celestia-font/Celestia-rvYr8.ttf");
+}
+
+@font-face {
+  font-family: "Transcity";
+  src: url("../src/assets/transcity/Transcity\ DEMO.otf");
+}
+
+/* html,
+body {
+  overflow-y: hidden;
+} */
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+  /* background-color: #be797e; */
+  background: linear-gradient(
+    180deg,
+    hsla(312, 66%, 76%, 1) 0%,
+    hsla(234, 93%, 67%, 1) 100%
+  );
+  /* background: linear-gradient(
+    180deg,
+    hsla(312, 66%, 76%, 1) 0%,
+    hsla(234, 93%, 67%, 1) 100%
+  ); */
+
+  background-size: "400% 400%";
+
+  animation: gradientLinearDesign 25s ease infinite;
+  text-align: center;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradientLinearDesign {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Futura;
+}
+
+/* Horizontal scrolling container */
+.main-container {
+  display: flex;
+  height: 100vh;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+/* Horizontal scrolling container */
+.horizontal-scroll-container {
+  display: flex;
+  flex-direction: row;
+  overflow-x: hidden;
+  width: 100vw;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+}
+
+.sectionMain {
+  flex: 0 0 100vw; /* Take full width */
+  max-height: 100vh; /* Allow content height but not more than viewport */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 100px;
+  scroll-snap-align: start;
+  overflow-y: auto;
+}
+
+/* Each section takes full screen width */
+.section {
+  flex: 0 0 100vw;
+  /* height: 100vh; */
+  display: block; /* Allow normal scrolling behavior */
+  scroll-snap-align: start;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  text-align: center;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+
+  padding-top: 100px;
+  overflow-y: auto; /* Allow vertical scrolling */
+}
+
+/* .section {
+  flex: 0 0 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  text-align: center;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+
+  padding-top: 100px;
+  overflow: scroll; */
+/* min-width: 100vw;
+  padding-top: 100px;
+  height: 100vh;
+  overflow-y: scroll; */
+
+/* height: 80vh; */
+/* display: flex;
+  align-items: center;
+  justify-content: center; */
+/* overflow: scroll; */
+/* background-color: #be797e; */
+/* border-right: 2px solid #ddd; */
+/* } */
+
+.section2 {
+  flex: 0 0 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+  padding: 2rem;
+  text-align: center;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  overflow-y: hidden;
+}
+
+.contactBotLocation {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  padding: 10px 0;
+  z-index: 10;
+  border-radius: 30px;
+}
+
+/* .section {
+  flex: 0 0 100vw;
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  background-color: #be797e;
+} */
+
+.anim_gradient {
+  background: linear-gradient(180deg, #a9c9ff 0%, #ffbbec 100%);
+  background-size: "400% 400%";
+  animation: "gradient 25s ease infinite";
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
