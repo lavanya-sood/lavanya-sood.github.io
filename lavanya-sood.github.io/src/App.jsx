@@ -7,15 +7,8 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Projects from "./pages/Projects/Projects";
 import Contact from "./pages/Contact/Contact";
-import GradientCircle from "./components/GradientCircle/GradientCircle";
-
-
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-// import { loadAll } from "@tsparticles/all"; // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
-// import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
-import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
-// import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
-
+import { loadSlim } from "@tsparticles/slim";
 
 const sections = ["Home", "About", "Projects", "Creative"];
 
@@ -23,27 +16,7 @@ const App = () => {
   const [activeTab, setActiveTab] = useState("Home");
   const [contactBot, setContactBot] = useState(false);
   const scrollContainerRef = useRef(null);
-
   const [init, setInit] = useState(false);
-
-  // this should be run only once per application lifetime
-  useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-      // starting from v2 you can add only the features you need reducing the bundle size
-      //await loadAll(engine);
-      //await loadFull(engine);
-      await loadSlim(engine);
-      //await loadBasic(engine);
-    }).then(() => {
-      setInit(true);
-    });
-  }, []);
-
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
 
   const options = useMemo(
     () => ({
@@ -113,19 +86,50 @@ const App = () => {
   );
 
   useEffect(() => {
-    const homeSection = document.getElementById("home");
+    const handleResize = () => {
+      if (scrollContainerRef.current) {
+        const sectionElements = scrollContainerRef.current.children;
+        const sectionWidth = window.innerWidth;
 
+        for (let section of sectionElements) {
+          section.style.width = `${sectionWidth}px`; // Ensure sections have correct width
+        }
+
+        // Fix scroll position when resizing
+        const sectionIndex = sections.indexOf(activeTab);
+        scrollContainerRef.current.scrollTo({
+          left: sectionIndex * sectionWidth,
+          behavior: "instant",
+        });
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Set initial sizes
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [activeTab]);
+
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => setInit(true));
+  }, []);
+
+  useEffect(() => {
+    const homeSection = document.getElementById("home");
     if (homeSection) {
       homeSection.style.overflow = "hidden"; // Prevent scrolling inside Home
     }
   }, []);
 
-  // Function to scroll to the correct section when clicking a navbar link
   const scrollToSection = (section) => {
     const sectionIndex = sections.indexOf(section);
+
     if (scrollContainerRef.current) {
+      const sectionWidth = window.innerWidth;
       scrollContainerRef.current.scrollTo({
-        left: sectionIndex * window.innerWidth,
+        left: sectionIndex * sectionWidth,
         behavior: "smooth",
       });
     }
@@ -140,7 +144,6 @@ const App = () => {
         contactBot={contactBot}
         setContactBot={setContactBot}
       />
-     
 
       {contactBot && (
         <motion.div
@@ -152,49 +155,26 @@ const App = () => {
           <Contact setContactBot={setContactBot} />
         </motion.div>
       )}
-      <motion.div
-        ref={scrollContainerRef}
-        className="horizontal-scroll-container"
-      >
+
+      <motion.div ref={scrollContainerRef} className="horizontal-scroll-container">
         {sections.map((section) => (
-          <>
-            {
-              section === "Home" ? (
-                <motion.div
-                  key={section}
-                  id={section.toLowerCase()}
-                  className="section2"
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={activeTab === section ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                >
-                  <Home />
-                
-                </motion.div>
-              ) : (
-                <motion.div
-                  key={section}
-                  id={section.toLowerCase()}
-                  className="sectionMain"
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={activeTab === section ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                >
-                  {section === "About" && <About />}
-                  {section === "Projects" && <Projects />}
-                  {section === "Creative" && <Projects />}
-                </motion.div>
-              )
-            
-            }
-          </>
+          <motion.div
+            key={section}
+            id={section.toLowerCase()}
+            className={section === "Home" ? "section2" : "sectionMain"}
+            initial={{ opacity: 0, x: 50 }}
+            animate={activeTab === section ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
+            {section === "Home" && <Home />}
+            {section === "About" && <About />}
+            {section === "Projects" && <Projects />}
+            {section === "Creative" && <Projects />}
+          </motion.div>
         ))}
       </motion.div>
-      {init && <Particles
-        id="tsparticles"
-        particlesLoaded={particlesLoaded}
-        options={options}
-      />}
+
+      {init && <Particles id="tsparticles" particlesLoaded={() => {}} options={options} />}
     </div>
   );
 };

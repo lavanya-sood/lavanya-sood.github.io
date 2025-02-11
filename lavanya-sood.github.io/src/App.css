@@ -77,7 +77,7 @@ body {
 /* Horizontal scrolling container */
 .main-container {
   display: flex;
-  height: 100vh;
+  /* height: 100vh; */
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth; /* Enables smooth scrolling */
@@ -95,16 +95,20 @@ body {
 
 .sectionMain {
   flex: 0 0 100vw; /* Take full width */
-  max-height: 100vh; /* Allow content height but not more than viewport */
+
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   padding-left: 2rem;
   padding-right: 2rem;
-  padding-top: 100px;
+  padding-top: 150px;
   scroll-snap-align: start;
   overflow-y: auto;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  z-index: 15;
 }
 
 /* Each section takes full screen width */
@@ -120,7 +124,7 @@ body {
   word-break: break-word;
   overflow-wrap: break-word;
 
-  padding-top: 100px;
+  padding-top: 200px;
   overflow-y: auto; /* Allow vertical scrolling */
 }
 
@@ -177,7 +181,7 @@ body {
   right: 20px;
 
   padding: 10px 0;
-  z-index: 10;
+  z-index: 19;
   border-radius: 30px;
 }
 
@@ -208,4 +212,10 @@ body {
   100% {
     background-position: 0% 50%;
   }
+}
+
+.sectionHeading {
+  font-family: Celestia;
+  font-size: 4em;
+  margin-bottom: 20px;
 }

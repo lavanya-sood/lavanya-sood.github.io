@@ -1,0 +1,78 @@
+.projectsSection {
+  margin-top: 60px;
+
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.projectsColumn {
+  flex: 50%;
+  max-width: 50%;
+  padding: 0 4px;
+}
+
+.projectTile {
+  /* max-width: 500px;
+  max-height: 800px; */
+  display: flex;
+  flex-direction: row;
+
+  padding: 28px;
+  padding-bottom: 60px;
+  padding-top: 60px;
+
+  margin: 20px;
+
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid #fff; */
+  /* border-radius: 20px; */
+
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2),
+    0 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.projectTile:hover {
+  transform: scale(1.05);
+  background: #d49e17;
+  border: none;
+}
+
+.tileImage {
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+  border-radius: 40px;
+}
+
+.tileData {
+  text-align: left;
+}
+
+.tileHeading {
+  font-family: Celestia;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+.tileDescription {
+  font-size: 1em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .projectsColumn {
+    flex: 100%;
+    max-width: 100%;
+  }
+}

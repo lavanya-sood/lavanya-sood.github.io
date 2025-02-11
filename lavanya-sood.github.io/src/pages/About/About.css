@@ -1,3 +1,30 @@
 .skillLogo {
   height: 100px;
 }
+
+.aboutParagraph {
+  font-size: 1em;
+  margin-bottom: 10px;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.skillsSection {
+  margin-top: 40px;
+}
+
+.skillsHeading {
+  font-family: Celestia;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.skillTitle {
+  font-family: Futura;
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+.bottomSection {
+  margin-bottom: 100px;
+}

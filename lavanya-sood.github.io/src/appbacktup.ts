@@ -26,6 +26,7 @@ const App = () => {
 
   const [init, setInit] = useState(false);
 
+  
   // this should be run only once per application lifetime
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -185,9 +186,7 @@ const App = () => {
                   {section === "Creative" && <Projects />}
                 </motion.div>
               )
-              // <>
-              // {section === 'Contact' && <Contact/>}
-              // </>
+            
             }
           </>
         ))}
@@ -202,37 +201,3 @@ const App = () => {
 };
 
 export default App;
-
-// import React from 'react';
-
-// import './App.css';
-// import Navbar from './components/Navbar/Navbar';
-// import Section from './components/Section/Section';
-// import Home from './pages/Home/Home';
-// import About from './pages/About/About';
-// import Projects from './pages/Projects/Projects';
-// import Contact from './pages/Contact/Contact';
-
-// const App = () => {
-//   return (
-//     <>
-//       <Navbar />
-//       <div className="main-container">
-//         <Section id="home" className="home">
-//           <Home/>
-//         </Section>
-//         <Section id="about" className="about">
-//           <About/>
-//         </Section>
-//         <Section id="projects" className="projects">
-//           <Projects/>
-//         </Section>
-//         <Section id="contact" className="contact">
-//           <Contact/>
-//         </Section>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default App;
