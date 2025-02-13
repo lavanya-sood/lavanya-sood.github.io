@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Projects from "./pages/Projects/Projects";
+import Creatives from "./pages/Creatives/Creatives";
 import Contact from "./pages/Contact/Contact";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
@@ -169,7 +170,7 @@ const App = () => {
             {section === "Home" && <Home />}
             {section === "About" && <About />}
             {section === "Projects" && <Projects />}
-            {section === "Creative" && <Projects />}
+            {section === "Creative" && <Creatives />}
           </motion.div>
         ))}
       </motion.div>

@@ -183,6 +183,7 @@ body {
   padding: 10px 0;
   z-index: 19;
   border-radius: 30px;
+  overflow-y: scroll;
 }
 
 /* .section {

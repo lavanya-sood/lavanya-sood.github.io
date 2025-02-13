@@ -11,6 +11,18 @@
 
 .skillsSection {
   margin-top: 40px;
+  margin-left: 100px;
+  margin-right: 100px;
+
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
+  /* box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2),
+    0 4px 10px rgba(0, 0, 0, 0.2); */
+  overflow: hidden;
+  padding: 40px;
 }
 
 .skillsHeading {

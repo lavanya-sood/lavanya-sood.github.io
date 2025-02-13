@@ -34,6 +34,16 @@ const Contact = ({ setContactBot }) => {
           break;
         case "How do I contact you?":
           botReply.push("You can contact me using LinkedIn");
+          botReply.push(
+           <div className="messageWithLink"> <p> You can contact me on </p> <a className="linkInfo" href="https://www.linkedin.com/in/lavanya-sood/" target="_blank">
+           LinkedIn
+         </a> </div>
+          );
+          botReply.push(
+            <div className="messageWithLink"> <p> You can also email me on  </p> <a className="linkInfo" href="mailto:lavanyasood09@gmail.com">
+            lavanyasood09@gmail.com
+          </a> </div>
+           );
           botReply.push("You can also email me on lavanyasood09@gmail.com");
           break;
         case "Just saying hello. 😀":
@@ -61,36 +71,36 @@ const Contact = ({ setContactBot }) => {
   };
 
   useEffect(() => {
-    const chatContainer = document.getElementById("chat-container");
+    const chatContainer = document.getElementById("chatContainer");
     if (chatContainer) {
       chatContainer.scrollTop = chatContainer.scrollHeight;
     }
   }, [messages]);
 
   return (
-    <div className="chat-container" id="chat-container">
-      <div className="chat-header">
-        <div className="chat-header-name">
-          <img src={chatbotIcon} className="chat-header-logo" />
-          <div className="chat-header-text">
+    <div className="chatContainer" id="chatContainer">
+      <div className="chatHeader">
+        <div className="chatHeaderName">
+          <img src={chatbotIcon} className="chatHeaderLogo" />
+          <div className="chatHeaderText">
             <h4> Lavi Bot </h4>
             <p> Ask me a question </p>
           </div>
         </div>
         <button
           onClick={() => setContactBot(false)}
-          className="chat-header-button"
+          className="chatHeaderButton"
         >
-          X
+          ✖
         </button>
       </div>
 
       <AnimatePresence>
-        <div className="messages-section">
+        <div className="messagesSection">
           {messages.map((message, index) => (
             <motion.div
               key={index}
-              className={`message-container ${message.sender}`} // Container for message and icon
+              className={`messageContainer ${message.sender}`} // Container for message and icon
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -100,26 +110,24 @@ const Contact = ({ setContactBot }) => {
               (index === 0 ||
                 (index > 0 && messages[index - 1].sender === "user")) ? ( // Icon only for bot messages
                 <motion.div
-                  className="bot-icon-container"
+                  className="botIconContainer"
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <img src={chatbotIcon} className="bot-icon" />
+                  <img src={chatbotIcon} className="botIcon" />
                 </motion.div>
               ) : (
                 <motion.div
-                  className="bot-icon-container"
+                  className="botIconContainer"
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <img src={chatbotIcon} className="bot-icon-hidden" />
+                  <img src={chatbotIcon} className="botIconHidden" />
                 </motion.div>
               )}
-              <div className="message">
-                {" "}
-                {/* Separate div for the message text */}
+              <div className={`message mes${message.sender}`}>
                 {message.text}
               </div>
             </motion.div>
@@ -132,7 +140,7 @@ const Contact = ({ setContactBot }) => {
                
                     <button
                       key={option}
-                      className="option-button"
+                      className="optionButton"
                       onClick={() => handleOptionClick(option)}
                     >
                       {option}
