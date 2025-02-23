@@ -1,31 +1,111 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
+import websiteLogo from "../../assets/weblogo.png";
 
-const Navbar = ({ activeTab, setActiveTab, contactBot, setContactBot }) => {
-  const sections = ["Home", "About", "Projects", "Creative"];
+const Navbar = ({ activeTab, setActiveTab, contactBot, setContactBot, isScrollingVertical }) => {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  console.log(isScrollingVertical);
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <ul className="nav-links">
-          {sections.map((section) => (
-            <li key={section} className="nav-item">
-              <button
-                onClick={() => setActiveTab(section)}
-                className={`nav-link ${activeTab === section ? "active" : ""}`}
-              >
-                {section}
-              </button>
-            </li>
-          ))}
-          <li  className="nav-item">
-              <button
-                onClick={() => setContactBot(!contactBot)}
-                className={`nav-link`}
-              >
-                Contact
-              </button>
-            </li>
+        {/* <img src={websiteLogo} className="websiteLogo"/> */}
+        <ul className="navLinks">
+          {screenWidth > 710 ? (
+            <>
+              <li key={"Home"} className="nav-item">
+                <button
+                  onClick={() => setActiveTab("Home")}
+                  className={`navLink ${activeTab === "Home" ? "active" : ""}`}
+                >
+                  Home
+                </button>
+              </li>
+
+              <li key={"About"} className="nav-item">
+                <button
+                  onClick={() => setActiveTab("About")}
+                  className={`navLink ${activeTab === "About" ? "active" : ""}`}
+                >
+                  About
+                </button>
+              </li>
+
+              <li className="imageTab">
+                <img src={websiteLogo} className="websiteLogo" />
+              </li>
+
+              <li key={"Projects"} className="nav-item">
+                <button
+                  onClick={() => setActiveTab("Projects")}
+                  className={`navLink ${
+                    activeTab === "Projects" ? "active" : ""
+                  }`}
+                >
+                  Projects
+                </button>
+              </li>
+
+              <li className="nav-item">
+                <button
+                  onClick={() => setContactBot(!contactBot)}
+                  className={`navLink`}
+                >
+                  Contact
+                </button>
+              </li>
+            </>
+          ) : (
+            <>
+          
+              <li className="imageTab">
+                <img src={websiteLogo} className="websiteLogo" />
+              </li>
+              <li key={"Home"} className="nav-item">
+                <button
+                  onClick={() => setActiveTab("Home")}
+                  className={`navLink ${activeTab === "Home" ? "active" : ""}`}
+                >
+                  Home
+                </button>
+              </li>
+              <li key={"About"} className="nav-item">
+                <button
+                  onClick={() => setActiveTab("About")}
+                  className={`navLink ${activeTab === "About" ? "active" : ""}`}
+                >
+                  About
+                </button>
+              </li>
+             
+              <li key={"Projects"} className="nav-item">
+                <button
+                  onClick={() => setActiveTab("Projects")}
+                  className={`navLink ${
+                    activeTab === "Projects" ? "active" : ""
+                  }`}
+                >
+                  Projects
+                </button>
+              </li>
+              <li className="nav-item">
+                <button
+                  onClick={() => setContactBot(!contactBot)}
+                  className={`navLink`}
+                >
+                  Contact
+                </button>
+              </li>
+            </>
+          )}
         </ul>
       </div>
     </nav>
@@ -33,56 +113,3 @@ const Navbar = ({ activeTab, setActiveTab, contactBot, setContactBot }) => {
 };
 
 export default Navbar;
-
-// import React, { useState, useEffect } from "react";
-// import "./Navbar.css";
-
-// const Navbar = () => {
-//   const sections = ["Home", "About", "Projects", "Contact"];
-//   const [activeTab, setActiveTab] = useState("Home");
-
-//   // Function to handle scrolling and update active tab
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       sections.forEach((section) => {
-//         const element = document.getElementById(section.toLowerCase());
-//         if (element) {
-//           const rect = element.getBoundingClientRect();
-//           if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
-//             setActiveTab(section);
-//           }
-//         }
-//       });
-//     };
-
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-
-//   return (
-//     <nav className="navbar">
-//       <div className="navbar-container">
-//         <ul className="nav-links">
-//           {sections.map((section) => (
-//             <li key={section} className="nav-item">
-//               <button
-//                 onClick={() => {
-//                   document
-//                     .getElementById(section.toLowerCase())
-//                     .scrollIntoView({ behavior: "smooth" });
-//                   setActiveTab(section);
-//                 }}
-//                 className={`nav-link ${activeTab === section ? "active" : ""}`}
-//               >
-//                 {section}
-//               </button>
-//             </li>
-//           ))}
-//         </ul>
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
-

@@ -13,30 +13,33 @@
   src: url("../src/assets/transcity/Transcity\ DEMO.otf");
 }
 
-/* html,
+html,
 body {
   overflow-y: hidden;
-} */
+}
 
 #root {
   width: 100%;
   margin: 0 auto;
   /* background-color: #be797e; */
-  background: linear-gradient(
-    180deg,
-    hsla(312, 66%, 76%, 1) 0%,
-    hsla(234, 93%, 67%, 1) 100%
-  );
   /* background: linear-gradient(
     180deg,
     hsla(312, 66%, 76%, 1) 0%,
     hsla(234, 93%, 67%, 1) 100%
   ); */
 
+  /* background: linear-gradient(180deg, #f59ac6 0%, #4a47a3 100%); */
+
+  background: linear-gradient(180deg, #fca3b7 0%, #872341 100%);
+
   background-size: "400% 400%";
+  height: 100vh;
 
   animation: gradientLinearDesign 25s ease infinite;
   text-align: center;
+}
+
+.website {
 }
 
 @keyframes gradient {
@@ -95,7 +98,7 @@ body {
 
 .sectionMain {
   flex: 0 0 100vw; /* Take full width */
-
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -109,6 +112,7 @@ body {
   word-break: break-word;
   overflow-wrap: break-word;
   z-index: 15;
+  /* overflow: scroll; */
 }
 
 /* Each section takes full screen width */
@@ -127,37 +131,6 @@ body {
   padding-top: 200px;
   overflow-y: auto; /* Allow vertical scrolling */
 }
-
-/* .section {
-  flex: 0 0 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  scroll-snap-align: start;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  text-align: center;
-  white-space: normal;
-  word-break: break-word;
-  overflow-wrap: break-word;
-
-  padding-top: 100px;
-  overflow: scroll; */
-/* min-width: 100vw;
-  padding-top: 100px;
-  height: 100vh;
-  overflow-y: scroll; */
-
-/* height: 80vh; */
-/* display: flex;
-  align-items: center;
-  justify-content: center; */
-/* overflow: scroll; */
-/* background-color: #be797e; */
-/* border-right: 2px solid #ddd; */
-/* } */
 
 .section2 {
   flex: 0 0 100vw;
@@ -185,17 +158,6 @@ body {
   border-radius: 30px;
   overflow-y: scroll;
 }
-
-/* .section {
-  flex: 0 0 100vw;
-  height: 100vh;
-  scroll-snap-align: start;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: black;
-  background-color: #be797e;
-} */
 
 .anim_gradient {
   background: linear-gradient(180deg, #a9c9ff 0%, #ffbbec 100%);

@@ -11,13 +11,23 @@ import Contact from "./pages/Contact/Contact";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 
-const sections = ["Home", "About", "Projects", "Creative"];
+const sections = ["Home", "About", "Projects"];
 
 const App = () => {
   const [activeTab, setActiveTab] = useState("Home");
   const [contactBot, setContactBot] = useState(false);
   const scrollContainerRef = useRef(null);
   const [init, setInit] = useState(false);
+
+  const divRef = useRef(null);
+  const [isScrollingVertical, setIsScrollingVertical] = useState(false);
+
+  const handleScroll = () => {
+    if (divRef.current) {
+      const { scrollTop, scrollHeight, clientHeight } = divRef.current;
+      setIsScrollingVertical(scrollTop > 0 && scrollTop < scrollHeight - clientHeight);
+    }
+  };
 
   const options = useMemo(
     () => ({
@@ -117,12 +127,12 @@ const App = () => {
     }).then(() => setInit(true));
   }, []);
 
-  useEffect(() => {
-    const homeSection = document.getElementById("home");
-    if (homeSection) {
-      homeSection.style.overflow = "hidden"; // Prevent scrolling inside Home
-    }
-  }, []);
+  // useEffect(() => {
+  //   const homeSection = document.getElementById("home");
+  //   if (homeSection) {
+  //     homeSection.style.overflow = "hidden"; // Prevent scrolling inside Home
+  //   }
+  // }, []);
 
   const scrollToSection = (section) => {
     const sectionIndex = sections.indexOf(section);
@@ -138,12 +148,13 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className="website">
       <Navbar
         activeTab={activeTab}
         setActiveTab={scrollToSection}
         contactBot={contactBot}
         setContactBot={setContactBot}
+        isScrollingVertical={isScrollingVertical}
       />
 
       {contactBot && (
@@ -162,15 +173,16 @@ const App = () => {
           <motion.div
             key={section}
             id={section.toLowerCase()}
-            className={section === "Home" ? "section2" : "sectionMain"}
+            className={"sectionMain"}
             initial={{ opacity: 0, x: 50 }}
             animate={activeTab === section ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5, ease: "easeOut" }}
+            ref={divRef}
+            onScroll={handleScroll}
           >
             {section === "Home" && <Home />}
             {section === "About" && <About />}
             {section === "Projects" && <Projects />}
-            {section === "Creative" && <Creatives />}
           </motion.div>
         ))}
       </motion.div>

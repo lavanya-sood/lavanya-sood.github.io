@@ -1,20 +1,20 @@
 import React from "react";
 import "../Projects/Projects.css";
 import ProjectTile from "./ProjectTile";
-import AskIcon from "../../assets/projects/askIcon.jpg";
-import BakeIcon from "../../assets/projects/bakechainIcon.jpg";
-import DiaryIcon from "../../assets/projects/diaryIcon.jpg";
-import EpidemicIcon from "../../assets/projects/epidemicIcon.jpg";
-import FunIcon from "../../assets/projects/funIcon.jpg";
-import GlobeIcon from "../../assets/projects/globeshoppersIcon.jpg";
-import HangmanIcon from "../../assets/projects/hangmanIcon.jpg";
-import HTMLIcon from "../../assets/projects/htmlIcon.jpg";
-import MazeIcon from "../../assets/projects/mazeIcon.jpg";
-import RichesIcon from "../../assets/projects/richesIcon.jpg";
+import AskIcon from "../../assets/projects/askIcon.png";
+import BakeIcon from "../../assets/projects/bakechainIcon.png";
+import DiaryIcon from "../../assets/projects/diaryIcon.png";
+import EpidemicIcon from "../../assets/projects/epidemicIcon.png";
+import FunIcon from "../../assets/projects/funIcon.png";
+import GlobeIcon from "../../assets/projects/globeshoppersIcon.png";
+import HangmanIcon from "../../assets/projects/hangmanIcon.png";
+import HTMLIcon from "../../assets/projects/htmlIcon.png";
+import MazeIcon from "../../assets/projects/mazeIcon.png";
+import RichesIcon from "../../assets/projects/richesIcon.png"; 
 
 const Projects = () => {
   return (
-    <div style={{ display: "flex", flexDirection: "column", overflow: "auto" }}>
+    <div style={{ display: "flex", flexDirection: "column", overflow: "scroll" }}> 
       <div>
         <h2 className="sectionHeading">The Engineer’s Exhibit</h2>
         <p className="aboutParagraph">

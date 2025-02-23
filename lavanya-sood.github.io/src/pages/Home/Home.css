@@ -23,7 +23,7 @@
 .homeImage {
   width: 30%;
   margin-top: 20px;
-  z-index: 20;
+  z-index: 10;
 }
 
 /* Responsive Design */
@@ -38,5 +38,24 @@
 @media (max-width: 768px) {
   .homeSection {
     flex-direction: column;
+    padding-top: 0px;
+  }
+}
+
+@media (max-width: 555px) {
+  .homeSection {
+    flex-direction: column;
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 327px) {
+  .homeSection {
+    flex-direction: column;
+    padding-top: 120px;
+  }
+
+  .homeImage {
+    width: 90%;
   }
 }
