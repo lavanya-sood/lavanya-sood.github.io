@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../Contact/Contact.css";
 import { motion, AnimatePresence } from "framer-motion";
 import chatbotIcon from "../../assets/chatboticon.png";
+import pdfIcon from "../../assets/pdfLogo.png";
 
 const Contact = ({ setContactBot }) => {
   const [messages, setMessages] = useState([
@@ -27,28 +28,26 @@ const Contact = ({ setContactBot }) => {
         case "Looking for your resume.":
           botReply.push("My resume is available as a PDF here");
           botReply.push(
-            <a href="someLink" target="_blank">
-              Resume
+            <a className="pdfLinkInfo" href="./Resume-Online.pdf" target="_blank">
+             <img src={pdfIcon} className="pdfIcon"/> Resume
             </a>
           );
           break;
         case "How do I contact you?":
-          botReply.push("You can contact me using LinkedIn");
           botReply.push(
            <div className="messageWithLink"> <p> You can contact me on </p> <a className="linkInfo" href="https://www.linkedin.com/in/lavanya-sood/" target="_blank">
            LinkedIn
          </a> </div>
           );
           botReply.push(
-            <div className="messageWithLink"> <p> You can also email me on  </p> <a className="linkInfo" href="mailto:lavanyasood09@gmail.com">
+            <div className="messageWithLink emailLink"> <p> You can also email me on  </p>  <a className="linkInfo" href="mailto:lavanyasood09@gmail.com">
             lavanyasood09@gmail.com
           </a> </div>
            );
-          botReply.push("You can also email me on lavanyasood09@gmail.com");
           break;
         case "Just saying hello. 😀":
           botReply.push("Hello! 😁");
-          botReply.push("Thank you for visiting my website");
+          botReply.push("Thank you so much for visiting my website");
           break;
         default:
           botReply = "Something went wrong";
@@ -63,7 +62,7 @@ const Contact = ({ setContactBot }) => {
       setMessages((prevMessages) => [
         ...prevMessages,
         ...replyValues,
-        { text: "Can I help you with anything else", sender: "bot" },
+        { text: "Can I help you with anything else?", sender: "bot" },
       ]);
 
       setShowOptions(true); // Show options after bot reply

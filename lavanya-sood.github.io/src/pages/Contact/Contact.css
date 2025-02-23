@@ -55,12 +55,12 @@
 .message {
   padding: 10px;
   border-radius: 10px;
-  background-color: #bc61ba8c;
+  background-color: #872341;
   text-align: left;
 }
 
 .mesuser {
-  background-color: #404dd86c;
+  background-color: #b37286;
 }
 
 .messageContainer::after {
@@ -87,11 +87,12 @@
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 10px;
-  color: #d49e17;
-  background: rgba(255, 255, 255, 0.4);
+  color: #9e7712;
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   /* color: white; */
   cursor: pointer;
+  border: 2px solid #d4a017;
 }
 
 .optionButton:hover {
@@ -146,6 +147,11 @@
   flex-direction: row;
 }
 
+.emailLink {
+  display: flex;
+  flex-direction: column;
+}
+
 .linkInfo {
   margin-left: 4px;
   color: #fff;
@@ -155,4 +161,22 @@
 
 .linkInfo:hover {
   color: #ebd8a8;
+}
+
+.pdfLinkInfo {
+  margin-left: 4px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: underline;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.pdfLinkInfo:hover {
+  color: #ebd8a8;
+}
+
+.pdfIcon {
+  width: 30px;
 }

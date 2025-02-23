@@ -24,7 +24,7 @@ function Home() {
       <motion.h1
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true }}
+      // viewport={{ once: true }}
       transition={{ duration: 0.3 }}
       variants={{
         visible: { opacity: 1, scale: 1 },
@@ -35,9 +35,18 @@ function Home() {
         Hi, I'm Lavanya
       </motion.h1>
       <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5, duration: 0.8 }}
+      initial="hidden"
+      whileInView="visible"
+      // viewport={{ once: true }}
+      transition={{ delay: 0.5, duration: 0.3, ease: 'easeIn'}}
+      variants={{
+        visible: { opacity: 1, scale: 1 },
+        hidden: { opacity: 0, scale: 0 }
+      }}
+        // initial={{ opacity: 0 }}
+        // animate={{ opacity: 1 }}
+        //  whileInView="visible"
+        // transition={{ delay: 0.5, duration: 0.8 }}
         className="homeDescription"
       >
         A meticulous software engineer with a fondness for clean code, whimsical design, and the endless pursuit of elegant technology.

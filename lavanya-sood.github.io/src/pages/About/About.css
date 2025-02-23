@@ -313,3 +313,15 @@
     left: 55%;
   }
 }
+
+@media (max-width: 658px) {
+  .sectionMain {
+    padding-top: 190px;
+  }
+}
+
+@media (max-width: 550px) {
+  .sectionMain {
+    padding-top: 220px;
+  }
+}
