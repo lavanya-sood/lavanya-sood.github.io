@@ -1,6 +1,7 @@
 import React from 'react';
+import maintainIcon from "../../assets/maintain.png";
 
-const ProjectTile = ({title, description, imageSrc, link}) => {
+const ProjectTile = ({title, description, imageSrc, link, workInProgress}) => {
 
     const openInNewTab = (url) => {
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
@@ -8,12 +9,16 @@ const ProjectTile = ({title, description, imageSrc, link}) => {
       }
 
   return (
-    <button className='projectTile' onClick={() => openInNewTab('https://stackoverflow.com')}>
+    <button className={`projectTile ${workInProgress ? 'projectUnderContruction' : ''}`} onClick={() => openInNewTab(link)}>
         <div className='imgOutbox'>
         <img src={imageSrc} className="tileImage" />
         </div>
         <div className='tileData'>
-        <h3 className="tileHeading"> {title} </h3>
+          <div className='tileTitleSection'>
+          {workInProgress && <img src={maintainIcon} className="maintainImage" />}
+          <h3 className="tileHeading"> {title} </h3>
+          </div>
+       
         <p className="tileDescription">{description}</p>    
         </div>
        

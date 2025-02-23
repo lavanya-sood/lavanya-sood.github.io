@@ -6,7 +6,6 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Projects from "./pages/Projects/Projects";
-import Creatives from "./pages/Creatives/Creatives";
 import Contact from "./pages/Contact/Contact";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
@@ -76,13 +75,7 @@ const App = () => {
         color: {
           value: "#ffffff",
         },
-        // links: {
-        //   color: "#ffffff",
-        //   distance: 150,
-        //   enable: true,
-        //   opacity: 0.5,
-        //   width: 1,
-        // },
+       
         move: {
           direction: "none",
           enable: true,
