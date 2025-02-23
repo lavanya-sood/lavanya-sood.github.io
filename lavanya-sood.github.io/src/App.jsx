@@ -11,6 +11,8 @@ import Contact from "./pages/Contact/Contact";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 
+import appLoadingGif from "../src/assets/loadingsymbol.gif";
+
 const sections = ["Home", "About", "Projects"];
 
 const App = () => {
@@ -19,19 +21,35 @@ const App = () => {
   const scrollContainerRef = useRef(null);
   const [init, setInit] = useState(false);
 
+  const [loading, setLoading] = useState(true);
+  const [exitAnimation, setExitAnimation] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setExitAnimation(true);
+      setTimeout(() => setLoading(false), 500);
+    }, 2700);
+
+    return () => clearTimeout(timer); // Cleanup on unmount
+  }, []);
+
   const divRef = useRef(null);
   const [isScrollingVertical, setIsScrollingVertical] = useState(false);
 
   const handleScroll = () => {
-    if (divRef.current) {
-      const { scrollTop, scrollHeight, clientHeight } = divRef.current;
-      setIsScrollingVertical(scrollTop > 0 && scrollTop < scrollHeight - clientHeight);
+    if (scrollContainerRef.current) {
+      console.log(scrollContainerRef.current);
+      const { scrollTop, scrollHeight, clientHeight } =
+        scrollContainerRef.current;
+      console.log(scrollTop, scrollHeight, clientHeight);
+      setIsScrollingVertical(
+        scrollTop > 0 && scrollTop < scrollHeight - clientHeight
+      );
     }
   };
 
   const options = useMemo(
     () => ({
-      
       fpsLimit: 120,
       interactivity: {
         events: {
@@ -93,7 +111,7 @@ const App = () => {
       },
       detectRetina: true,
     }),
-    [],
+    []
   );
 
   useEffect(() => {
@@ -149,45 +167,67 @@ const App = () => {
 
   return (
     <div className="website">
-      <Navbar
-        activeTab={activeTab}
-        setActiveTab={scrollToSection}
-        contactBot={contactBot}
-        setContactBot={setContactBot}
-        isScrollingVertical={isScrollingVertical}
-      />
-
-      {contactBot && (
+      {loading ? (
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="contactBotLocation"
+          className="loadingPage"
+          initial={{ y: 0 }}
+          animate={exitAnimation ? {scale:0.3,y: "-80%", opacity: 0 } : {}}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
         >
-          <Contact setContactBot={setContactBot} />
+          <img src={appLoadingGif} className="appLoadingGif" />
         </motion.div>
-      )}
+      ) : (
+        <>
+          <Navbar
+            activeTab={activeTab}
+            setActiveTab={scrollToSection}
+            contactBot={contactBot}
+            setContactBot={setContactBot}
+            isScrollingVertical={isScrollingVertical}
+          />
 
-      <motion.div ref={scrollContainerRef} className="horizontal-scroll-container">
-        {sections.map((section) => (
+          {contactBot && (
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="contactBotLocation"
+            >
+              <Contact setContactBot={setContactBot} />
+            </motion.div>
+          )}
+
           <motion.div
-            key={section}
-            id={section.toLowerCase()}
-            className={"sectionMain"}
-            initial={{ opacity: 0, x: 50 }}
-            animate={activeTab === section ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            ref={divRef}
-            onScroll={handleScroll}
+            ref={scrollContainerRef}
+            className="horizontal-scroll-container"
           >
-            {section === "Home" && <Home />}
-            {section === "About" && <About />}
-            {section === "Projects" && <Projects />}
+            {sections.map((section) => (
+              <motion.div
+                key={section}
+                id={section.toLowerCase()}
+                className={"sectionMain"}
+                initial={{ opacity: 0, x: 50 }}
+                animate={activeTab === section ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                ref={divRef}
+                onScroll={handleScroll}
+              >
+                {section === "Home" && <Home />}
+                {section === "About" && <About />}
+                {section === "Projects" && <Projects />}
+              </motion.div>
+            ))}
           </motion.div>
-        ))}
-      </motion.div>
 
-      {init && <Particles id="tsparticles" particlesLoaded={() => {}} options={options} />}
+          {init && (
+            <Particles
+              id="tsparticles"
+              particlesLoaded={() => {}}
+              options={options}
+            />
+          )}
+        </>
+      )}
     </div>
   );
 };
