@@ -1,0 +1,328 @@
+.skillLogo {
+  width: 120px;
+  height: 120px;
+}
+
+.aboutParagraph {
+  font-size: 1em;
+  margin-bottom: 10px;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.skillsSection {
+  margin-top: 40px;
+  margin-left: 100px;
+  margin-right: 100px;
+
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
+  /* box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2),
+    0 4px 10px rgba(0, 0, 0, 0.2); */
+  padding: 40px;
+}
+
+.skillsHeading {
+  font-family: Celestia;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* .skillTitle {
+  font-family: Futura;
+  margin-top: 10px;
+  font-size: 1.2em;
+} */
+
+.bottomSection {
+  margin-bottom: 100px;
+}
+
+.skillsOptions {
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 80px;
+}
+
+.skillsColumn {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.skillSection {
+  /* max-width: 500px;
+  max-height: 800px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  margin: 20px;
+}
+
+/* BUBBLE */
+
+/* Container */
+.skillBubblesContainer {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: pink; */
+}
+
+/* Centered title */
+.skillTitle {
+  position: absolute;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  z-index: 2; /* Ensure text stays above */
+  font-family: Celestia;
+}
+
+/* Floating Bubbles */
+.bubble {
+  position: absolute;
+  /* background-color: white; */
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2),
+    0 4px 10px rgba(0, 0, 0, 0.2);
+
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: floatAnimation 4s infinite ease-in-out alternate;
+  padding: 10px;
+  cursor: default;
+}
+
+.bubble:hover {
+  width: 165px;
+  height: 165px;
+}
+
+/* Icon inside bubble */
+.bubbleIcon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 5px;
+}
+
+/* Text inside bubble */
+.bubbleText {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Floating animation */
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Randomized float for each bubble */
+.bubble-1 {
+  top: 10%;
+  left: 45%;
+  animation: floatAnimation 3s infinite ease-in-out alternate;
+}
+.bubble-2 {
+  top: 15%;
+  left: 60%;
+  animation: floatAnimation 4s infinite ease-in-out alternate 1s;
+}
+.bubble-3 {
+  top: 30%;
+  left: 75%;
+  animation: floatAnimation 3.5s infinite ease-in-out alternate 0.5s;
+}
+.bubble-4 {
+  top: 45%;
+  left: 60%;
+  animation: floatAnimation 4.2s infinite ease-in-out alternate 1.2s;
+}
+.bubble-5 {
+  top: 65%;
+  left: 45%;
+  animation: floatAnimation 3.8s infinite ease-in-out alternate 0.8s;
+}
+.bubble-6 {
+  top: 45%;
+  left: 27%;
+  animation: floatAnimation 4.5s infinite ease-in-out alternate 1.5s;
+}
+.bubble-7 {
+  top: 30%;
+  left: 15%;
+  animation: floatAnimation 3.2s infinite ease-in-out alternate 0.3s;
+}
+.bubble-8 {
+  top: 15%;
+  left: 27%;
+  animation: floatAnimation 4s infinite ease-in-out alternate 1s;
+}
+
+@media (max-width: 1195px) {
+  .bubble-1 {
+    top: 10%;
+    left: 45%;
+  }
+
+  .bubble-2 {
+    top: 15%;
+    left: 65%;
+  }
+  .bubble-3 {
+    top: 30%;
+    left: 80%;
+  }
+  .bubble-4 {
+    top: 45%;
+    left: 65%;
+  }
+
+  .bubble-5 {
+    top: 65%;
+    left: 45%;
+  }
+  .bubble-6 {
+    top: 45%;
+    left: 20%;
+  }
+  .bubble-7 {
+    top: 30%;
+    left: 5%;
+  }
+  .bubble-8 {
+    top: 15%;
+    left: 20%;
+  }
+}
+
+@media (max-width: 930px) {
+  .skillBubblesContainer {
+    height: 750px;
+  }
+
+  .bubble-1 {
+    top: 5%;
+    left: 38%;
+  }
+
+  .bubble-2 {
+    top: 20%;
+    left: 55%;
+  }
+  .bubble-3 {
+    top: 35%;
+    left: 70%;
+  }
+  .bubble-4 {
+    top: 50%;
+    left: 55%;
+  }
+
+  .bubble-5 {
+    top: 65%;
+    left: 38%;
+  }
+  .bubble-6 {
+    top: 50%;
+    left: 20%;
+  }
+  .bubble-7 {
+    top: 35%;
+    left: 5%;
+  }
+  .bubble-8 {
+    top: 20%;
+    left: 20%;
+  }
+}
+
+@media (max-width: 730px) {
+  .skillBubblesContainer {
+    height: 900px;
+  }
+
+  .bubble-1 {
+    top: 5%;
+    left: 20%;
+  }
+
+  .bubble-2 {
+    top: 5%;
+    left: 55%;
+  }
+  .bubble-3 {
+    top: 25%;
+    left: 20%;
+  }
+  .bubble-4 {
+    top: 25%;
+    left: 55%;
+  }
+
+  .bubble-5 {
+    top: 57%;
+    left: 20%;
+  }
+  .bubble-6 {
+    top: 57%;
+    left: 55%;
+  }
+  .bubble-7 {
+    top: 78%;
+    left: 20%;
+  }
+  .bubble-8 {
+    top: 78%;
+    left: 55%;
+  }
+}
+
+@media (max-width: 658px) {
+  .sectionMain {
+    padding-top: 190px;
+  }
+}
+
+@media (max-width: 550px) {
+  .sectionMain {
+    padding-top: 220px;
+  }
+}

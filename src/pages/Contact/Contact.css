@@ -1,0 +1,189 @@
+.chatContainer {
+  width: 400px;
+  margin: 0 auto;
+
+  border-radius: 20px;
+
+  overflow-y: scroll;
+  height: 500px;
+
+  border: 3px solid #d49e17;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+}
+
+.chatContainer {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.chatContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.messagesSection {
+  padding: 20px;
+}
+
+.messageContainer {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  width: 100%;
+  clear: both;
+}
+
+.messageContainer.user {
+  justify-content: flex-end;
+}
+
+.botIconContainer {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.botIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.botIconHidden {
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+}
+
+.message {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #872341;
+  text-align: left;
+}
+
+.mesuser {
+  background-color: #b37286;
+}
+
+.messageContainer::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.user {
+  float: right;
+}
+
+.bot {
+  float: left;
+}
+
+.options {
+  margin-top: 10px;
+  text-align: left;
+  padding-left: 50px;
+}
+
+.optionButton {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  color: #9e7712;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  /* color: white; */
+  cursor: pointer;
+  border: 2px solid #d4a017;
+}
+
+.optionButton:hover {
+  background-color: #d49e17;
+  color: white;
+  cursor: pointer;
+  border: 1px solid #d49e17;
+}
+
+.chatHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 10px;
+  background-color: #d49e17;
+  position: sticky;
+  top: 0;
+}
+
+.chatHeaderLogo {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.chatHeaderName {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.chatHeaderText {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.chatHeaderButton {
+  background: none;
+  font-size: 2em;
+  padding: 0 20px;
+}
+
+.chatHeaderButton:hover {
+  cursor: pointer;
+  border: 1px solid #d49e17;
+  color: #dedede;
+}
+
+.messageWithLink {
+  display: flex;
+  flex-direction: row;
+}
+
+.emailLink {
+  display: flex;
+  flex-direction: column;
+}
+
+.linkInfo {
+  margin-left: 4px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.linkInfo:hover {
+  color: #ebd8a8;
+}
+
+.pdfLinkInfo {
+  margin-left: 4px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: underline;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.pdfLinkInfo:hover {
+  color: #ebd8a8;
+}
+
+.pdfIcon {
+  width: 30px;
+}

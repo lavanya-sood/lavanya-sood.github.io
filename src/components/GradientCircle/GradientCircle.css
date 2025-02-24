@@ -1,0 +1,30 @@
+.gradient-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.gradient-circle {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 123, 255, 0.5),
+    rgba(0, 123, 255, 0)
+  );
+  border-radius: 50%;
+  pointer-events: none; /* Prevent interference with mouse events */
+  transform: translate(-50%, -50%); /* Center the circle on the cursor */
+  transition: top 0.03s linear, left 0.03s linear; /* Smooth movement */
+  opacity: 0.8;
+}
+
+/* .gradient-circle {
+    background: radial-gradient(circle, rgba(255, 0, 150, 0.6), rgba(255, 0, 150, 0));
+    width: 200px; 
+    height: 200px;
+    opacity: 0.8; 
+  }
+   */
