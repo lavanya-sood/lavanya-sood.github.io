@@ -5,26 +5,12 @@ import homeImage from '../../assets/homeimage.png'
 function Home() {
   return (
     <div className="homeSection">
-      {/* <motion.h1
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      //   initial="hidden"
-      // whileInView="visible"
-      // viewport={{ once: true }}
-      // transition={{ duration: 0.3 }}
-      // variants={{
-      //   visible: { opacity: 1, scale: 1 },
-      //   hidden: { opacity: 0, scale: 0 }
-      // }}
 
-      > */}
       <img src={homeImage} className="homeImage" />
       <div>
       <motion.h1
       initial="hidden"
       whileInView="visible"
-      // viewport={{ once: true }}
       transition={{ duration: 0.3 }}
       variants={{
         visible: { opacity: 1, scale: 1 },
@@ -37,7 +23,6 @@ function Home() {
       <motion.p
       initial="hidden"
       whileInView="visible"
-      // viewport={{ once: true }}
       transition={{ delay: 0.5, duration: 0.3, ease: 'easeIn'}}
       variants={{
         visible: { opacity: 1, scale: 1 },

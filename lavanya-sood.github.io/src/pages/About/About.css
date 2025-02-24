@@ -113,6 +113,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   animation: floatAnimation 4s infinite ease-in-out alternate;
   padding: 10px;
+  cursor: default;
 }
 
 .bubble:hover {

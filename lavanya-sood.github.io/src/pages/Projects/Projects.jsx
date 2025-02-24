@@ -11,12 +11,19 @@ import HangmanIcon from "../../assets/projects/hangmanIcon.png";
 import HTMLIcon from "../../assets/projects/htmlIcon.png";
 import MazeIcon from "../../assets/projects/mazeIcon.png";
 import RichesIcon from "../../assets/projects/richesIcon.png"; 
+import { motion } from "framer-motion";
 
 const Projects = () => {
   return (
     <div style={{ display: "flex", flexDirection: "column", overflow: "scroll" }}> 
       <div>
-        <h2 className="sectionHeading">The Engineer’s Exhibit</h2>
+        <motion.h2     initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 0.3 }}
+          variants={{
+            visible: { opacity: 1, scale: 1 },
+            hidden: { opacity: 0, scale: 0 },
+          }} className="sectionHeading">The Engineer’s Exhibit</motion.h2>
         <p className="aboutParagraph">
           Over the years, I’ve built a collection of projects—some practical,
           some experimental—all in pursuit of improving my technical skills and
