@@ -3,9 +3,10 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding-top: 40px;
+  padding-top: 0px;
   padding-left: 160px;
   padding-right: 160px;
+  height: 100%;
 }
 
 .homeHeading {
@@ -18,6 +19,7 @@
   font-size: 1.3em;
   margin-left: 10%;
   margin-right: 10%;
+  margin-bottom: 100px;
 }
 
 .homeImage {

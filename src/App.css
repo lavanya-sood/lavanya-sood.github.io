@@ -29,6 +29,7 @@ body {
 
   animation: gradientLinearDesign 25s ease infinite;
   text-align: center;
+  color: white;
 }
 
 @keyframes gradient {
