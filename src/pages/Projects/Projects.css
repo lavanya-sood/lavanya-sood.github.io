@@ -8,7 +8,7 @@
 .projectsColumn {
   flex: 50%;
   max-width: 50%;
-  padding: 0 4px;
+  padding: 0 20px;
 }
 
 .projectTile {
@@ -23,13 +23,8 @@
 
   margin: 20px;
 
-  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 2px solid #fff; */
-  /* border-radius: 20px; */
+  color: white;
+  width: 100%;
 
   border: 2px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.1);
